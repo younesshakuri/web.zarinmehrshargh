@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load zarin %}
+{% block title_prefix %}{% tr product "name" %} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap feature">
+    <div class="still still--{{ product.slug }}">
+      {% if product.main_image %}
+      <img src="{{ product.main_image.url }}" alt="{% tr product 'name' %}">
+      {% else %}
+      {% include "partials/flower.html" %}
+      {% endif %}
+    </div>
+    <div>
+      <p class="eyebrow">{% tr product.category "name" %}</p>
+      <h1>{% tr product "name" %}</h1>
+      <p class="lead">{% tr product "short_description" %}</p>
+      <p>{% tr product "description" %}</p>
+    </div>
+  </div>
+</section>
+{% if product.images.all %}
+<section class="section">
+  <div class="wrap product-grid">
+    {% for image in product.images.all %}
+    <figure class="product-card">
+      <img src="{{ image.image.url }}" alt="{% tr image 'alt' %}">
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+<section class="section section-ink">
+  <div class="wrap narrow">
+    {% include "partials/inquiry_form.html" %}
+  </div>
+</section>
+{% if related %}
+<section class="section">
+  <div class="wrap section-head"><h2>{{ ui.related }}</h2></div>
+  <div class="wrap product-grid">
+    {% for item in related %}
+    <a class="product-card reveal" href="{% url 'product_detail' item.slug %}">
+      <h3>{% tr item "name" %}</h3>
+      <p>{% tr item "short_description" %}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

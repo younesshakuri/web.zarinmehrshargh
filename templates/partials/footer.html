@@ -1,0 +1,28 @@
+{% load zarin %}
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="eyebrow">{% tr profile "name" %}</p>
+      <p class="footer-slogan">{% tr profile "slogan" %}</p>
+    </div>
+    <div>
+      <p class="footer-label">{{ ui.phone }}</p>
+      <a href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+      <p class="footer-label">{{ ui.email }}</p>
+      <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+    </div>
+    <div>
+      <p class="footer-label">{{ ui.address }}</p>
+      <p>{% tr profile "address" %}</p>
+      <p class="footer-label">{{ ui.hours }}</p>
+      <p>{% tr profile "hours" %}</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <small>{{ ui.rights }}</small>
+    {% comment %} <small>{{ ui.sample }}</small> {% endcomment %}
+  </div>
+</footer>
+{% if profile.whatsapp %}
+<a class="whatsapp" href="https://wa.me/{{ profile.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
+{% endif %}

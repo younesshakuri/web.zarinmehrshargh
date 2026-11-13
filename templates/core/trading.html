@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static zarin %}
+{% block title_prefix %}{{ ui.trading_title }} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{% tr profile "name" %}</p>
+      <h1>{{ ui.trading_title }}</h1>
+      <p class="lead">{% tr profile "trade" %}</p>
+    </div>
+
+<div class="hero-stage compact trading-media">
+    <img
+        src="{% static 'videos/trading-process.gif' %}"
+        alt="فرآوری و بسته‌بندی زعفران زرین مهر شرق"
+        loading="eager"
+    >
+</div>
+
+</section>
+<section class="section">
+  <div class="wrap service-grid">
+    {% for service in services %}
+    <a class="service-card reveal" href="{% url 'service_detail' service.slug %}">
+      <span>0{{ forloop.counter }}</span>
+      <h3>{% tr service "name" %}</h3>
+      <p>{% tr service "summary" %}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+<section class="section section-ink">
+  <div class="wrap narrow">
+    {% include "partials/inquiry_form.html" %}
+  </div>
+</section>
+{% endblock %}

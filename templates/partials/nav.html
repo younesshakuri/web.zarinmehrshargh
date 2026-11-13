@@ -1,0 +1,36 @@
+
+{% load static zarin %}
+<header class="site-header">
+  <a class="brand" href="{% url 'home' %}">
+    <img
+      src="{% static 'images/logo/zarin-logo.png' %}"
+      alt="Zarin Mehr Shargh"
+      class="brand-logo"
+    >
+    <span>{% tr profile "name" %}</span>
+  </a>
+
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    <span></span><span></span><span></span>
+    <span class="visually-hidden">{{ ui.menu }}</span>
+  </button>
+
+  <nav id="site-nav" class="site-nav">
+    <a href="{% url 'home' %}" {% if request.resolver_match.url_name == 'home' %}aria-current="page"{% endif %}>{{ ui.nav_home }}</a>
+    <a href="{% url 'product_list' %}" {% if request.resolver_match.url_name == 'product_list' or request.resolver_match.url_name == 'product_detail' %}aria-current="page"{% endif %}>{{ ui.nav_products }}</a>
+    <a href="{% url 'service_list' %}" {% if request.resolver_match.url_name == 'service_list' or request.resolver_match.url_name == 'service_detail' %}aria-current="page"{% endif %}>{{ ui.nav_services }}</a>
+    <a href="{% url 'trading' %}" {% if request.resolver_match.url_name == 'trading' %}aria-current="page"{% endif %}>{{ ui.nav_trading }}</a>
+    <a href="{% url 'about' %}" {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>{{ ui.nav_about }}</a>
+    <a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %}aria-current="page"{% endif %}>{{ ui.nav_contact }}</a>
+  </nav>
+
+  <div class="header-tools">
+    <form class="lang" action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ request.get_full_path }}">
+      <button type="submit" name="language" value="fa" {% if lang == 'fa' %}aria-current="true"{% endif %}>فا</button>
+      <button type="submit" name="language" value="en" {% if lang == 'en' %}aria-current="true"{% endif %}>EN</button>
+    </form>
+    <a class="btn-gold btn-small" href="{% url 'contact' %}?kind=quote#inquiry">{{ ui.quote }}</a>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+{% load zarin %}
+<form id="inquiry" class="inquiry reveal" method="post" action="">
+  {% csrf_token %}
+  <input type="hidden" name="kind" value="{{ kind }}">
+  <div class="hp" aria-hidden="true">{{ form.company_site }}</div>
+  <p class="eyebrow">{{ ui.kicker }}</p>
+  <h2>{{ ui.kind_title|key:kind }}</h2>
+  <div class="row g-3">
+    {% for field in form %}
+      {% if field.name != "company_site" %}
+      <div class="{% if field.name == 'message' or field.name == 'subject' %}col-12{% else %}col-md-6{% endif %}">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {{ field.errors }}
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <button class="btn-gold" type="submit">{{ ui.kind_title|key:kind }}</button>
+</form>

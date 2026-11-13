@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load zarin %}
+{% block title_prefix %}{{ ui.contact_title }} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{% tr profile "name" %}</p>
+    <h1>{{ ui.contact_title }}</h1>
+    <p class="lead">{{ ui.contact_lead }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap contact-grid">
+    <div class="contact-card reveal">
+      <p class="footer-label">{{ ui.address }}</p>
+      <p>{% tr profile "address" %}</p>
+      <p class="footer-label">{{ ui.phone }}</p>
+      <a href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+      <p class="footer-label">{{ ui.email }}</p>
+      <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+      <p class="footer-label">{{ ui.hours }}</p>
+      <p>{% tr profile "hours" %}</p>
+      <p class="sample-note">{{ ui.sample }}</p>
+      <iframe class="map" title="{{ ui.address }}" src="https://www.openstreetmap.org/export/embed.html?bbox=59.45%2C36.22%2C59.70%2C36.40&amp;layer=mapnik&amp;marker=36.30%2C59.60"></iframe>
+    </div>
+    {% include "partials/inquiry_form.html" %}
+  </div>
+</section>
+{% endblock %}

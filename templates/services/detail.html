@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load zarin %}
+{% block title_prefix %}{% tr service "name" %} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap feature">
+    <div class="still still--service">
+      {% if service.image %}
+      <img src="{{ service.image.url }}" alt="{% tr service 'name' %}">
+      {% else %}
+      {% include "partials/flower.html" %}
+      {% endif %}
+    </div>
+    <div>
+      <p class="eyebrow">{{ ui.nav_services }}</p>
+      <h1>{% tr service "name" %}</h1>
+      <p class="lead">{% tr service "summary" %}</p>
+      <p>{% tr service "description" %}</p>
+      <a class="btn-gold" href="{% url 'contact' %}?kind=partnership#inquiry">{{ ui.partnership }}</a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap service-grid">
+    {% for item in others %}
+    <a class="service-card reveal" href="{% url 'service_detail' item.slug %}">
+      <h3>{% tr item "name" %}</h3>
+      <p>{% tr item "summary" %}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

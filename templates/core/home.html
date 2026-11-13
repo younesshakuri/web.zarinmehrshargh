@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% comment %} {% load zarin %} {% endcomment %}
+{% load static zarin %}
+{% block page %}home{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <canvas class="dust" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">{% tr profile "name" %}</p>
+      <h1 class="reveal">{% tr profile "slogan" %}</h1>
+      <p class="lead reveal">{% tr profile "intro" %}</p>
+      <div class="hero-actions reveal">
+        <a class="btn-gold" href="{% url 'contact' %}?kind=quote#inquiry">{{ ui.quote }}</a>
+        <a class="btn-ghost" href="{% url 'service_list' %}">{{ ui.see_services }}</a>
+      </div>
+    </div>
+    {% comment %} <div class="hero-stage reveal">
+      <span class="watermark">{{ ui.watermark }}</span>
+      {% include "partials/flower.html" %}
+    </div> {% endcomment %}
+
+ <div class="hero-stage reveal">
+
+    <div class="hero-carousel" id="heroCarousel">
+
+        <div class="hero-slides">
+
+            <div class="hero-slide active">
+                <img src="{% static 'images/hero/saffron-1.jpg' %}"
+                     alt="Premium Persian Saffron">
+            </div>
+
+            <div class="hero-slide">
+                <img src="{% static 'images/hero/saffron-2.jpg' %}"
+                     alt="Saffron Packaging">
+            </div>
+
+            <div class="hero-slide">
+                <img src="{% static 'images/hero/saffron-3.jpg' %}"
+                     alt="Saffron Processing">
+            </div>
+
+            <div class="hero-slide">
+                <img src="{% static 'images/hero/saffron-4.jpg' %}"
+                     alt="Persian Saffron Flowers">
+            </div>
+
+        </div>
+
+        <div class="hero-image-overlay"></div>
+
+        <div class="hero-dots">
+            <button class="hero-dot active" type="button"></button>
+            <button class="hero-dot" type="button"></button>
+            <button class="hero-dot" type="button"></button>
+            <button class="hero-dot" type="button"></button>
+        </div>
+
+        <span class="hero-image-label">
+            ZARIN MEHR SHARGH
+        </span>
+
+    </div>
+
+</div>
+
+  </div>
+</section>
+
+<div class="marquee" dir="ltr">
+  <div class="marquee-track">
+    {% for service in services %}
+    <span>{% tr service "name" %}</span><i aria-hidden="true"></i>
+    {% endfor %}
+    {% for service in services %}
+    <span>{% tr service "name" %}</span><i aria-hidden="true"></i>
+    {% endfor %}
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap section-head reveal">
+    <p class="eyebrow">۰۲</p>
+    <h2>{{ ui.services_title }}</h2>
+    <p>{{ ui.services_lead }}</p>
+  </div>
+  <div class="wrap service-grid">
+    {% for service in services %}
+    <a class="service-card reveal" href="{% url 'service_detail' service.slug %}">
+      <span>0{{ forloop.counter }}</span>
+      <h3>{% tr service "name" %}</h3>
+      <p>{% tr service "summary" %}</p>
+    </a>
+    {% empty %}
+    <p>{{ ui.empty }}</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section-ink">
+  <div class="wrap section-head reveal">
+    <p class="eyebrow">۰۳</p>
+    <h2>{{ ui.products_title }}</h2>
+    <p>{{ ui.products_lead }}</p>
+  </div>
+  {% for product in featured %}
+  <article class="wrap feature reveal {% if forloop.counter|divisibleby:2 %}is-flip{% endif %}">
+    <div class="still still--{{ product.slug }}">
+      {% if product.main_image %}
+      <img src="{{ product.main_image.url }}" alt="{% tr product 'name' %}">
+      {% else %}
+      {% include "partials/flower.html" %}
+      {% endif %}
+    </div>
+    <div class="feature-copy">
+      <p class="eyebrow">{% tr product.category "name" %}</p>
+      <h3>{% tr product "name" %}</h3>
+      <p>{% tr product "short_description" %}</p>
+      <a class="btn-ghost" href="{% url 'product_detail' product.slug %}">{{ ui.details }}</a>
+    </div>
+  </article>
+  {% empty %}
+  <p class="wrap">{{ ui.empty }}</p>
+  {% endfor %}
+  <div class="wrap center">
+    <a class="btn-gold" href="{% url 'product_list' %}">{{ ui.all_products }}</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap section-head reveal">
+    <p class="eyebrow">۰۴</p>
+    <h2>{{ ui.process_title }}</h2>
+  </div>
+  <ol class="wrap process">
+    {% for title, text in ui.steps %}
+    <li class="reveal">
+      <span>0{{ forloop.counter }}</span>
+      <h3>{{ title }}</h3>
+      <p>{{ text }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section section-moss">
+  <div class="wrap section-head reveal">
+    <p class="eyebrow">۰۵</p>
+    <h2>{{ ui.gallery_title }}</h2>
+  </div>
+  <div class="wrap gallery">
+    {% for item in gallery %}
+    <figure class="scene scene-{{ forloop.counter }} reveal">
+      {% if item.image %}
+      <img src="{{ item.image.url }}" alt="{% tr item 'title' %}">
+      {% endif %}
+      <figcaption>
+        <strong>{% tr item "title" %}</strong>
+        <span>{% tr item "caption" %}</span>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap section-head reveal">
+    <p class="eyebrow">۰۶</p>
+    <h2>{{ ui.values_title }}</h2>
+  </div>
+  <div class="wrap value-grid">
+    {% for value in values %}
+    <article class="value-card reveal">
+      <h3>{% tr value "title" %}</h3>
+      <p>{% tr value "text" %}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>{{ ui.cta_title }}</h2>
+    <p>{{ ui.cta_lead }}</p>
+    <a class="btn-gold" href="{% url 'contact' %}?kind=quote#inquiry">{{ ui.quote }}</a>
+  </div>
+</section>
+{% endblock %}

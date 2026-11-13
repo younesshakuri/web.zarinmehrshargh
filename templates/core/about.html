@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load zarin %}
+{% block title_prefix %}{{ ui.about_title }} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{% tr profile "name" %}</p>
+    <h1>{{ ui.about_title }}</h1>
+    <p class="lead">{% tr profile "about" %}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap value-grid">
+    {% for value in values %}
+    <article class="value-card reveal">
+      <h3>{% tr value "title" %}</h3>
+      <p>{% tr value "text" %}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="section section-moss">
+  <div class="wrap gallery">
+    {% for item in gallery %}
+    <figure class="scene scene-{{ forloop.counter }} reveal">
+      {% if item.image %}<img src="{{ item.image.url }}" alt="{% tr item 'title' %}">{% endif %}
+      <figcaption>
+        <strong>{% tr item "title" %}</strong>
+        <span>{% tr item "caption" %}</span>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

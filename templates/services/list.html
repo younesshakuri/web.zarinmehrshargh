@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load zarin %}
+{% block title_prefix %}{{ ui.nav_services }} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{% tr profile "name" %}</p>
+    <h1>{{ ui.nav_services }}</h1>
+    <p class="lead">{{ ui.services_lead }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap service-grid">
+    {% for service in services %}
+    <a class="service-card reveal" href="{% url 'service_detail' service.slug %}">
+      <span>0{{ forloop.counter }}</span>
+      <h3>{% tr service "name" %}</h3>
+      <p>{% tr service "summary" %}</p>
+    </a>
+    {% empty %}
+    <p>{{ ui.empty }}</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

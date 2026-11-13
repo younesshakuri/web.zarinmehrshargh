@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load zarin %}
+{% block title_prefix %}{{ ui.nav_products }} — {% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{% tr profile "name" %}</p>
+    <h1>{{ ui.nav_products }}</h1>
+    <p class="lead">{{ ui.products_lead }}</p>
+  </div>
+</section>
+{% for category in categories %}
+<section class="section {% if forloop.counter|divisibleby:2 %}section-ink{% endif %}">
+  <div class="wrap section-head">
+    <h2>{% tr category "name" %}</h2>
+    <p>{% tr category "description" %}</p>
+  </div>
+  <div class="wrap product-grid">
+    {% for product in category.products.all %}
+      {% if product.is_active %}
+      <a class="product-card reveal" href="{% url 'product_detail' product.slug %}">
+        <div class="still still--{{ product.slug }}">
+          {% if product.main_image %}
+          <img src="{{ product.main_image.url }}" alt="">
+          {% else %}
+          {% include "partials/flower.html" %}
+          {% endif %}
+        </div>
+        <h3>{% tr product "name" %}</h3>
+        <p>{% tr product "short_description" %}</p>
+      </a>
+      {% endif %}
+    {% empty %}
+    <p>{{ ui.empty }}</p>
+    {% endfor %}
+  </div>
+</section>
+{% empty %}
+<section class="section"><p class="wrap">{{ ui.empty }}</p></section>
+{% endfor %}
+{% endblock %}
