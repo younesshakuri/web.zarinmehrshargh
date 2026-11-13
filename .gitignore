@@ -1,8 +1,28 @@
+# Venv/
+# __pycache__/
+# *.py[cod]
+# db.sqlite3
+# media/
+# staticfiles/
+# .env
+# *.log
+
+
+
+
 Venv/
+venv/
+.venv/
 __pycache__/
 *.py[cod]
-db.sqlite3
-media/
-staticfiles/
-.env
 *.log
+db.sqlite3
+.env
+.env.*
+!.env.example
+staticfiles/
+media/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
