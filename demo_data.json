@@ -1,0 +1,307 @@
+[
+{
+  "model": "core.siteprofile",
+  "pk": 1,
+  "fields": {
+    "name_fa": "شرکت زعفران زرین مهر شرق",
+    "name_en": "Zarin Mehr Shargh Saffron Company",
+    "slogan_fa": "اصالت، ریشه در طبیعت؛ کیفیت، امضای زرین ما",
+    "slogan_en": "Authenticity rooted in nature; quality signed in gold.",
+    "intro_fa": "زرین مهر شرق در بسته‌بندی سرگل و گل زعفران، تولید فرآورده‌های زعفرانی، سورتینگ محصولات کشاورزی و بازرگانی مواد غذایی فعالیت می‌کند. این سایت برای معرفی شرکت و دریافت استعلام خریداران عمده است.",
+    "intro_en": "Zarin Mehr Shargh packs sargol and saffron flowers, produces saffron goods, sorts agricultural crops, and trades food products. This site introduces the company and receives wholesale inquiries.",
+    "about_fa": "فعالیت شرکت بر کیفیت دسته‌بندی، بسته‌بندی دقیق و عرضهٔ عمده بنا شده است. از مزرعه تا بستهٔ نهایی، جداسازی و کنترل چشمی بخشی از کار روزمرهٔ ماست. متن و اطلاعات تماس فعلی نمونه‌اند و از پنل مدیریت جایگزین می‌شوند.",
+    "about_en": "The company is built around careful grading, precise packing, and wholesale supply. From the field to the finished pack, sorting and visual control are part of the daily work. The current text and contact details are samples and can be replaced from the admin.",
+    "trade_fa": "بخش بازرگانی زرین مهر شرق برای خریداران عمده، واردکنندگان و همکاران تجاری است. عمده‌فروشی مواد غذایی و آشامیدنی در کنار زعفران انجام می‌شود و قیمت، پس از بررسی مقدار و مشخصات سفارش اعلام می‌گردد.",
+    "trade_en": "The trading desk serves wholesalers, importers, and commercial partners. Food and beverage wholesale sits alongside saffron, and prices are quoted after the quantity and specification of each order are reviewed.",
+    "phone": "zarinmehrshargh_support",
+    "whatsapp": "zarinmehrshargh_support",
+    "email": "zarinmehrshargh.support@gmail.com",
+    "address_fa": "مشهد، خراسان رضوی — بلوار دانشجوی جنوبی — دانشجو 11",
+    "address_en": "Mashhad, Razavi Khorasan — South Daneshju Blvd. — Daneshju 11",
+    "hours_fa": "شنبه تا چهارشنبه، ۸ تا ۱۶",
+    "hours_en": "Saturday to Wednesday, 8:00 to 16:00",
+    "instagram_url": "https://instagram.com/"
+  }
+},
+{
+  "model": "core.companyvalue",
+  "pk": 1,
+  "fields": {
+    "title_fa": "اصالت",
+    "title_en": "Origin",
+    "text_fa": "زعفران را با نام مبدأ و درجهٔ واقعی عرضه می‌کنیم.",
+    "text_en": "Saffron is offered with its real origin and grade.",
+    "display_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.companyvalue",
+  "pk": 2,
+  "fields": {
+    "title_fa": "دقت در بسته‌بندی",
+    "title_en": "Precise packing",
+    "text_fa": "وزن، جنس بسته و ظاهر نهایی پیش از خروج کنترل می‌شود.",
+    "text_en": "Weight, pack material, and finish are checked before dispatch.",
+    "display_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.companyvalue",
+  "pk": 3,
+  "fields": {
+    "title_fa": "همکاری عمده",
+    "title_en": "Wholesale partnership",
+    "text_fa": "پاسخ استعلام بر اساس حجم، مقصد و نوع بسته‌بندی تنظیم می‌شود.",
+    "text_en": "Quotes follow volume, destination, and the required pack.",
+    "display_order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "core.galleryitem",
+  "pk": 1,
+  "fields": {
+    "title_fa": "بسته‌بندی سرگل",
+    "title_en": "Sargol packing",
+    "caption_fa": "خط بسته‌بندی سرگل",
+    "caption_en": "Sargol packing line",
+    "image": "gallery/watermarked_img_3609917540238507542.jpg",
+    "display_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.galleryitem",
+  "pk": 2,
+  "fields": {
+    "title_fa": "سورتینگ محصول",
+    "title_en": "Crop sorting",
+    "caption_fa": "جداسازی و یکدست‌سازی",
+    "caption_en": "Grading and sorting",
+    "image": "gallery/file_00000000b93881f4bb9b4a40efc10a11_dPtg3x6.png",
+    "display_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.galleryitem",
+  "pk": 3,
+  "fields": {
+    "title_fa": "بستهٔ صادراتی",
+    "title_en": "Export pack",
+    "caption_fa": "آماده‌سازی سفارش عمده",
+    "caption_en": "Wholesale order preparation",
+    "image": "gallery/watermarked_img_13275764571068661333.jpg",
+    "display_order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name_fa": "زعفران بسته‌بندی‌شده",
+    "name_en": "Packaged saffron",
+    "slug": "packaged-saffron",
+    "description_fa": "سرگل، نگین، پوشال و گل زعفران در بسته‌های عمده.",
+    "description_en": "Sargol, negin, pushal, and saffron flower in wholesale packs.",
+    "image": "categories/watermarked_img_5253239971748540505.jpg",
+    "display_order": 1,
+    "is_active": true,
+    "created_at": "2026-11-10T22:09:27.496Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name_fa": "فرآورده‌های زعفران",
+    "name_en": "Saffron derivatives",
+    "slug": "saffron-derivatives",
+    "description_fa": "فرآورده‌هایی که از زعفران درجه‌بندی‌شده تولید و بسته‌بندی می‌شوند.",
+    "description_en": "Goods produced and packed from graded saffron.",
+    "image": "",
+    "display_order": 2,
+    "is_active": true,
+    "created_at": "2026-11-10T22:09:27.500Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name_fa": "سرگل ممتاز",
+    "name_en": "Premium sargol",
+    "slug": "premium-sargol",
+    "short_description_fa": "رشته‌های سرگل، یکدست و مناسب بستهٔ عمده.",
+    "short_description_en": "Even sargol threads for wholesale packs.",
+    "description_fa": "سرگل از بخش بالایی کلاله جدا می‌شود و برای خریدارانی مناسب است که ظاهر یکدست و رنگ پایدار می‌خواهند. حداقل سفارش و نوع بسته پس از استعلام اعلام می‌شود.",
+    "description_en": "Sargol is taken from the upper stigma. It suits buyers who want an even appearance and a stable color. Minimum order and pack type are confirmed with the quote.",
+    "main_image": "products/watermarked_img_12880225272186760503.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "display_order": 1,
+    "created_at": "2026-11-10T22:09:27.505Z",
+    "updated_at": "2026-11-12T11:51:15.081Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name_fa": "گل زعفران",
+    "name_en": "Saffron flower",
+    "slug": "saffron-flower",
+    "short_description_fa": "گل کامل برای خشک‌کردن، جداسازی یا بسته‌بندی.",
+    "short_description_en": "Whole flowers for drying, separating, or packing.",
+    "description_fa": "گل زعفران برای مجموعه‌هایی عرضه می‌شود که جداسازی یا بسته‌بندی را در مقصد خود ادامه می‌دهند. رطوبت و نحوهٔ ارسال در استعلام مشخص می‌شود.",
+    "description_en": "Whole flowers are supplied to partners who continue separation or packing at their own site. Moisture and shipping method are set in the quote.",
+    "main_image": "products/watermarked_img_10685973968153550650.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "display_order": 2,
+    "created_at": "2026-11-10T22:09:27.510Z",
+    "updated_at": "2026-11-12T11:32:43.534Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name_fa": "نگین زعفران",
+    "name_en": "Negin saffron",
+    "slug": "negin-saffron",
+    "short_description_fa": "رشته‌های ضخیم و درشت با دسته‌بندی دقیق.",
+    "short_description_en": "Thick threads, carefully graded.",
+    "description_fa": "نگین از درشت‌ترین رشته‌ها انتخاب می‌شود و بسته‌بندی آن برای نمایش کیفیت در بازار عمده طراحی می‌گردد.",
+    "description_en": "Negin is selected from the thickest threads and packed to present that quality in the wholesale market.",
+    "main_image": "products/watermarked_img_8954354517533773248.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "display_order": 3,
+    "created_at": "2026-11-10T22:09:27.514Z",
+    "updated_at": "2026-11-12T11:41:24.561Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "name_fa": "پودر زعفران",
+    "name_en": "Saffron powder",
+    "slug": "saffron-powder",
+    "short_description_fa": "پودر یکنواخت برای تولید و بسته‌بندی مجدد.",
+    "short_description_en": "An even powder for production and repacking.",
+    "description_fa": "پودر از زعفران درجه‌بندی‌شده آسیاب می‌شود و برای کارگاه‌های تولید مواد غذایی و بسته‌بندی مجدد مناسب است.",
+    "description_en": "The powder is milled from graded saffron and suits food workshops and repacking lines.",
+    "main_image": "products/watermarked_img_5970665728011661751.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "display_order": 4,
+    "created_at": "2026-11-10T22:09:27.518Z",
+    "updated_at": "2026-11-12T11:45:25.277Z"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 1,
+  "fields": {
+    "name_fa": "بسته‌بندی سرگل و گل زعفران",
+    "name_en": "Sargol and flower packing",
+    "slug": "sargol-packing",
+    "summary_fa": "بسته‌بندی رشته و گل با وزن و ظاهر یکسان.",
+    "summary_en": "Packing threads and flowers to a consistent weight and finish.",
+    "description_fa": "جداسازی، توزین و چیدن در قوطی یا بستهٔ مورد توافق خریدار. جنس بسته و برچسب در سفارش مشخص می‌شود.",
+    "description_en": "Separation, weighing, and placing into the tin or pack agreed with the buyer. Material and label are set per order.",
+    "image": "services/file_0000000075f08243a27cfd9f51691f49.png",
+    "display_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 2,
+  "fields": {
+    "name_fa": "تولید و بسته‌بندی فرآورده زعفران",
+    "name_en": "Saffron goods production",
+    "slug": "saffron-goods",
+    "summary_fa": "تبدیل زعفران درجه‌بندی‌شده به فرآورده و بستهٔ نهایی.",
+    "summary_en": "Turning graded saffron into a finished good and pack.",
+    "description_fa": "آسیاب، ترکیب و بسته‌بندی فرآورده زیر نظر همان استانداردی که برای محصول خام رعایت می‌شود.",
+    "description_en": "Milling, blending, and packing under the same care used for the raw crop.",
+    "image": "services/watermarked_img_16973531514665153578.jpg",
+    "display_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 3,
+  "fields": {
+    "name_fa": "سورتینگ محصولات کشاورزی",
+    "name_en": "Agricultural sorting",
+    "slug": "crop-sorting",
+    "summary_fa": "دسته‌بندی و یکدست‌سازی فرآورده‌های زراعی.",
+    "summary_en": "Grading agricultural crops into even lots.",
+    "description_fa": "جداسازی بر اساس اندازه، سلامت و ظاهر، سپس بسته‌بندی برای انبار یا ارسال عمده.",
+    "description_en": "Sorting by size, soundness, and appearance, then packing for storage or wholesale dispatch.",
+    "image": "services/Purple_and_Gold_Saffron_Processing_Facility_bb9p8GF.png",
+    "display_order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 4,
+  "fields": {
+    "name_fa": "پیمانکاری امور زراعی",
+    "name_en": "Farm contracting",
+    "slug": "farm-contracting",
+    "summary_fa": "انجام کارهای زراعی به‌صورت پیمانکاری.",
+    "summary_en": "Agricultural work carried out under contract.",
+    "description_fa": "آماده‌سازی، داشت و برداشت طبق توافق مزرعه. محدودهٔ کار و زمان‌بندی در قرارداد می‌آید.",
+    "description_en": "Preparation, crop care, and harvest as agreed with the farm. Scope and timing sit in the contract.",
+    "image": "services/watermarked_img_11880125900871954733.jpg",
+    "display_order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 5,
+  "fields": {
+    "name_fa": "عمده‌فروشی مواد غذایی و آشامیدنی",
+    "name_en": "Food and beverage wholesale",
+    "slug": "food-wholesale",
+    "summary_fa": "تأمین عمده برای فروشگاه، کارگاه و بازرگان.",
+    "summary_en": "Wholesale supply for shops, workshops, and traders.",
+    "description_fa": "زعفران در کنار سایر اقلام غذایی و آشامیدنی، با اعلام موجودی و قیمت پس از استعلام.",
+    "description_en": "Saffron alongside other food and drink items, with availability and price after inquiry.",
+    "image": "services/watermarked_img_16654338621845061275.jpg",
+    "display_order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "services.service",
+  "pk": 6,
+  "fields": {
+    "name_fa": "بازرگانی",
+    "name_en": "Trading",
+    "slug": "trading-desk",
+    "summary_fa": "هماهنگی خرید، فروش و ارسال سفارش‌های تجاری.",
+    "summary_en": "Coordinating purchase, sale, and dispatch of commercial orders.",
+    "description_fa": "پیگیری سفارش از اعلام مشخصات تا آماده‌سازی مدارک و ارسال. این بخش ویترین قیمت آنلاین نیست.",
+    "description_en": "Following an order from specification to documents and dispatch. This desk is not an online price list.",
+    "image": "services/watermarked_img_2549982483715714270.jpg",
+    "display_order": 6,
+    "is_active": true
+  }
+}
+]
